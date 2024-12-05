@@ -9,13 +9,13 @@ Note: Once your project is created, it’s recommended to delete init.sh to prev
 
 ### To run the setup script after your project is created:
 ```shell
-    source ./scripts/setup.sh
+  source ./scripts/setup.sh
 ```
 This script should be run every time someone clones the repository to ensure the project is set up correctly.
 
 ### To run the application:
 ```shell
-    ./scripts/run.sh
+  ./scripts/run.sh
 ```
 
 This is the entry point for your application.
