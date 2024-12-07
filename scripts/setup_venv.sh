@@ -12,18 +12,21 @@ if ! python3 -m venv --help &> /dev/null; then
     exit 1
 fi
 
+skip_venv_setup=false
 if [ -d "venv" ]; then
     read -r -p "The virtual environment is already set up. Do you want to overwrite it? (y/n): " choice
     case "$choice" in
         y|Y ) echo "Overwriting virtual environment...";;
-        * ) exit 1
+        * ) skip_venv_setup=true;;
     esac
 fi
 
-rm -rf venv  # Remove existing virtual environment
+if [ "$skip_venv_setup" = false ]; then
+    rm -rf venv  # Remove existing virtual environment
 
-# Create a new virtual environment
-python3 -m venv venv
-source venv/bin/activate
+    # Create a new virtual environment
+    python3 -m venv venv
+    source venv/bin/activate
 
-echo "Virtual environment is set up."
+    echo "Virtual environment is set up."
+fi

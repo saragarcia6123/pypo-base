@@ -63,7 +63,7 @@ readme_content = f"""
    ```
 """
 
-with open("README2.md", "w") as f:
+with open("README.md", "w") as f:
     f.write(readme_content)
 
 print("README.md generated successfully!")
